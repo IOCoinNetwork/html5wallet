@@ -1,0 +1,110 @@
+.tooltip
+    position relative
+    &:after
+        content attr(aria-label)
+        display none
+        position absolute
+        z-index 10
+        padding 5px 8px
+        color $white
+        font-size 0.7rem
+        font-weight normal
+        text-align center
+        line-height normal
+        letter-spacing normal
+        text-decoration none
+        text-transform none
+        word-wrap break-word
+        white-space pre
+        pointer-events none
+        background $main__Color--dark
+        border-radius 3px
+        -webkit-font-smoothing subpixel-antialiased
+    &:before
+        position absolute
+        z-index 15
+        display none
+        width 0 
+        height @width
+        color $main__Color--dark
+        pointer-events none
+        content ""
+        border 5px solid transparent
+    &:hover
+    &:active
+    &:focus
+        &:before
+        &:after
+            display inline-block
+    
+    &-n
+    &-ne
+    &-nw
+        &:after 
+            right 50%
+            bottom 100%
+            margin-bottom 5px
+        &:before
+            top -5px
+            right 50%
+            bottom auto
+            margin-right -5px
+            border-top-color $main__Color--dark
+    &-ne
+        &:after
+            right auto
+            left 50%
+            margin-left -15px
+    &-nw
+        &:after
+            margin-right -15px
+    
+    &-e
+        &:after
+            bottom 50%
+            left 100%
+            margin-left 5px
+            transform translateY(50%)
+        &:before
+            top 50%
+            right -5px
+            bottom 50%
+            margin-top -5px
+            border-right-color $main__Color--dark
+    &-s
+    &-se
+    &-sw
+        &:after
+            top 100%
+            right 50%
+            margin-top 5px
+        &:before
+            top auto
+            right 50%
+            bottom -5px
+            margin-right -5px
+            border-bottom-color $main__Color--dark
+    &-se
+        &:after
+            right auto
+            left 50%
+            margin-left -15px
+    &-sw
+        &:after
+            margin-right -15px
+    &-n
+    &-s
+        &:after
+            transform translateX(50%)
+    &-w
+        &:after
+            right 100%
+            bottom 50%
+            margin-right 5px
+            transform translateY(50%)
+        &:before
+            top 50%
+            bottom 50%
+            left -5px
+            margin-top -5px
+            border-left-color $main__Color--dark

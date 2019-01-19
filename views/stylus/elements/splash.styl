@@ -1,0 +1,202 @@
+op(value)
+	opacity value
+cursor()
+	cursor default
+
+.splash
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-image -webkit-linear-gradient(-60deg, $main__Color, $tertiary__Color--splash)
+	z-index 50
+	justify-content center
+	align-items center
+	height 100vh 
+	overflow hidden
+	
+.splash__hero
+	text-align center
+	line-height 1em
+	margin-top -10em
+	margin-bottom 5em
+
+	h1
+		color $white
+		font-size 3.5rem
+		letter-spacing normal
+		cursor()
+	span
+		color white - rgba(0,0,0,0.2)
+		font-size 1rem
+		cursor()
+
+.splash__inner
+	flex-direction row
+	width 100%
+	height 15rem
+	justify-content center
+	align-items center
+
+.splash__inner--left
+	padding 2em
+	
+.splash__logo
+	align-items center
+	margin 0 1em
+	//animation splash-logo 2s linear 
+	//animation-delay 5s
+	//transform translateX(170%)
+	
+	.icon--glyph
+		fill $white
+		width 96px
+		height @width
+		
+	.splash__logo--copy
+		color $white - rgba(0,0,0,0.5)
+		font-size 2.5rem
+		font-weight 600
+		line-height 3.5rem
+		cursor()
+		//animation splash-copy 2s linear
+		//animation-delay 2s
+		//op(0)
+
+.splash__inner--right
+	max-height 14.7rem
+	padding 0 2em
+	border-left 1px solid $white - rgba(0,0,0,0.8)
+	overflow-y auto
+	justify-content flex-start
+	position relative
+	//animation splash-right 2s linear
+	//animation-delay 4s
+	//op(0)
+
+	&::-webkit-scrollbar
+		width 5px
+		background-color $white - rgba(0,0,0,0.9)
+		border-radius 10px
+	
+	&::-webkit-scrollbar-thumb
+		border-radius 10px
+		background-color $main__Color - rgba(0,0,0,0.2)
+		
+		&:hover
+			background-color $main__Color
+
+	.checkbox--default
+		position absolute
+		right 2em
+		transform translateY(3.2em)
+		
+		label
+			background-color transparent
+			border-color $white - rgba(0,0,0,0.8)
+
+.splash__button
+	flex-direction row
+	flex-shrink 0
+	align-items center
+	width 420px
+	height 80px
+	padding 1em
+	margin 1em
+	border 1px solid $white - rgba(0,0,0,0.8)
+	border-radius 3px
+	transition all 0.1s ease-in-out
+	box-sizing border-box
+	
+	.icon--glyph
+		fill $white - rgba(0,0,0,0.3)
+		width 24px
+		height @width
+
+	.icon--outline
+		@extend .splash__button .icon--glyph
+		fill none
+		stroke $white - rgba(0,0,0,0.3)
+	
+	&:hover
+		background-color $white - rgba(0,0,0,0.9)
+		box-shadow 0 0 20px $black - rgba(0,0,0,0.95)
+		border-color transparent
+			
+.splash__button--green
+	@extend .splash__button
+	
+	&:hover
+		background-color $secondary__Color--available - rgba(0,0,0,0.2)
+
+.splash__button--blue
+	@extend .splash__button
+	
+	&:hover
+		background-color $main__Color - rgba(0,0,0,0.5)
+		
+.splash__button--text
+	margin-left 1em
+
+	h2
+		color $white
+		font-weight 600
+		letter-spacing normal
+		line-height 1.9rem
+		font-size 1.4rem
+	
+	span
+		font-size 0.8rem
+		color $white - rgba(0,0,0,0.5)
+
+.splash__control
+	position absolute
+	top 22px
+	right 18px
+	
+	.icon--outline
+		width 18px
+		height @width
+		stroke $white 
+		stroke-width 2
+		
+		&:hover
+			transform rotate(180deg)
+
+.splash__drag
+	position absolute
+	top 0
+	width calc(100% - 55px)
+	height 64px
+	-webkit-app-region drag
+
+@-webkit-keyframes splash-logo
+	from
+		op(0)
+		transform translateX(170%)
+	to
+		op(1)
+		transform translateX(0)
+
+@-webkit-keyframes splash-copy
+	from
+		op(0)
+	to
+		op(1)
+
+/*@-webkit-keyframes splash-right
+	from
+		op(0)
+	to
+		op(1)*/
+
+.animated--fade
+	animation fade 5s ease-in
+	
+@-webkit-keyframes fade
+	from 
+		op(0)
+	to
+		op(1)
+

@@ -1,0 +1,131 @@
+// Main card design for the balance, transactions etc.
+// Balance
+
+//Plain Card properties without any specificity.
+.card
+	margin 1em 0
+	position relative
+	justify-content space-between
+	background-color $white
+	border-radius 5px
+	box-shadow 0 2px 6px $black - rgba(0,0,0,0.9)
+	line-height 1
+	&:nth-child(even)
+		margin-left 0
+
+.card__top
+	display flex
+	flex-direction row
+
+.card__amount
+	font-size 3rem
+	font-weight 700
+	color $white - 60%
+	letter-spacing -.5px
+	margin-top 0.1em
+	flex 1
+	&:after
+		content "IOC"
+		font-size 1.7rem
+		font-weight 300
+		color $white - 30%
+		margin-left 0.3em
+
+.card__amount--decimal
+	font-size 85%
+	color $white - 30%
+
+.card--available
+	padding 2em 1em
+	padding-bottom 1em
+	border-left 4px solid $secondary__Color--available
+	flex-direction row
+	&:before
+		content "Available"
+		font-size 1rem
+		font-weight 600
+		color $white - 20%
+		letter-spacing 1px
+		position absolute
+		top 1em
+		margin-left 0.2em
+	.icon
+		width 42px
+		height @width
+
+.card--pending
+	@extend .card--available
+	border-color $secondary__Color--pending
+	&:before
+		content "Pending"
+
+.card--staked
+	@extend .card--available
+	border-color $secondary__Color--pending
+	&:before
+		content "Staked"
+
+.card--received
+	padding 0.5em 1em
+	line-height 1.7em
+
+	.card__amount
+		font-size 2rem
+		color $secondary__Color--available
+		line-height 1em
+
+		.card__amount--decimal
+			color @color + 20%
+
+.card--spent
+	@extend .card--received
+	.card__amount
+		color $main__Color--accent	
+		.card__amount--decimal
+			color @color + 20%
+
+.card__address
+	color $white - 60%
+
+.card__date
+	font-size 0.8rem
+	font-style italic
+	color $white - 30%
+
+.card__conf
+	display flex
+	align-items center
+	justify-content space-between
+
+progress
+	width 100%
+	height 2px
+	background-color $white - 30%
+
+	&::-webkit-progress-bar
+		background-color $tertiary__Color--gray
+
+.card__conf--pending
+	.tick
+		color $secondary__Color--pending
+
+	progress::-webkit-progress-value
+		background-color $secondary__Color--pending
+
+.card__conf--available
+	.tick
+		color $secondary__Color--available
+
+	progress::-webkit-progress-value
+		background-color $secondary__Color--available
+
+.tick
+	font-size 0.7rem
+	font-weight 700
+	background-color $white
+	padding-left 0.5em
+
+// Short History
+.history
+	.card
+		flex-direction column

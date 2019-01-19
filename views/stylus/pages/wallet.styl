@@ -1,0 +1,66 @@
+section.wallet
+	background-color $white
+	margin 0.2em 0
+	padding 1em 2em
+	flex-direction column
+
+.wallet__primary
+	flex-direction row
+	align-items center
+	justify-content space-between
+	border-bottom 1px solid $tertiary__Color--gray
+	padding 1em 0
+	padding-bottom 2em
+	margin-bottom 2em
+	
+
+.wallet__primary--not
+	@extend .wallet__primary
+	margin-bottom 0
+	border-bottom 1px dashed $tertiary__Color--gray
+	
+	&:last-child
+		border-bottom none
+
+.entry__left
+.entry__right
+	flex-direction row
+	align-items center
+
+.entry__status
+	width 16px
+	height @width
+	border-radius 50%
+	cursor pointer
+	
+.entry__status--active
+	@extend .entry__status
+	background-color $secondary__Color--available
+	
+.entry__status--pending
+	@extend .entry__status
+	background-color $secondary__Color--pending
+
+.entry__status--inactive
+	@extend .entry__status
+	background-color $main__Color--accent
+
+.entry__address
+	-webkit-user-select text
+	cursor text
+	margin-top 0.5em
+	overflow-wrap break-word
+	width 330px
+
+
+.entry__alias
+	-webkit-user-select text
+	cursor text
+	margin-top 0.5em
+	overflow-wrap break-word
+
+.entry__alias_0
+	-webkit-user-select text
+	cursor text
+	margin-top 0.5em
+	overflow-wrap break-word

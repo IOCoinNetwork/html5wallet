@@ -1,0 +1,67 @@
+.console
+    position fixed
+    bottom 0
+    left 0
+    right 0
+    width 100vw
+    height 30vh
+    overflow-y scroll
+    padding 0.5em
+    color $main__Color--dark + 90%
+    font-family 'Lucida Console'
+    background-color $main__Color--dark - 50% - rgba(0,0,0,0.05)
+    box-shadow 0 -1px 25px $black - rgba(0,0,0,0.8)
+
+    input
+        border-color transparent
+        border-bottom 2px solid $main__Color
+        border-radius 0
+        background-color $main__Color--dark - 60% - rgba(0,0,0,0.2)
+        width calc(100vw - 40px)
+        padding 1em
+        margin 0
+        font-weight 400
+        color $white - 0%
+
+        &::-webkit-input-placeholder
+            color $white - 75%
+        
+        &:focus
+            background-color $main__Color--dark - 60% 
+            border-top-color transparent
+            border-right-color transparent
+            border-left-color transparent
+            border-bottom-color $main__Color
+
+    &::-webkit-scrollbar
+        width 10px
+        background-color $main__Color--dark - 50% - rgba(0,0,0,0.05)
+    
+    &::-webkit-scrollbar-thumb
+        background-color $main__Color - rgba(0,0,0,0.2)
+        
+        &:hover
+            background-color $main__Color
+
+.console__body
+    margin-bottom 50px
+
+.console__bottom
+    position fixed
+    bottom 0
+    left 0
+    right 0
+
+.console__result
+    display flex
+    align-items flex-start
+    margin 0.5em
+
+    .console__message
+        cursor text
+        -webkit-user-select text
+        font-family 'Lucida Console'
+        overflow hidden
+
+.console__time
+    margin-right 1em

@@ -1,0 +1,105 @@
+// Container 
+.settings
+	padding 1em 2em 
+
+	input[type="radio"]
+		padding 0
+		box-sizing border-box
+	
+	&:first-child
+		padding-top 1em
+		
+	.avatar__image
+		box-shadow none
+		
+
+h3
+	color $main__Color
+	font-weight 700
+
+h4
+	color $main__Color--dark + 30%
+	font-weight 700
+
+h5
+	color $main__Color - rgba(0,0,0,0.4)
+	font-size 0.85rem
+	font-weight normal
+	margin 0.4em 0
+
+.settings__entry
+	flex-direction row
+	justify-content space-between
+	align-items center
+	padding 0.5em 0
+
+	&:last-child
+		padding-bottom 2em
+		border-bottom 1px solid $tertiary__Color--gray
+
+.settings__description
+	width 70%
+	line-height 2em
+	
+	p
+		color $gray + 30%
+		font-size 0.9rem
+		line-height 1.7em
+
+.settings__profile
+	flex-direction row
+	align-items center
+
+.settings__stats
+	border-left 1px solid $tertiary__Color--gray
+	padding 0 1em
+	line-height 2em
+
+	&:first-of-type
+		margin-left 1.5em
+
+.settings__stats--value
+	font-size 2rem
+	font-weight 800
+	color $main__Color--dark + 30%
+
+.settings__stats--cat
+	color $gray + 30%
+
+.settings__lock
+	.icon--glyph
+		width 48px
+		height @width
+	
+	&:hover
+		.icon--glyph
+			fill $main__Color
+
+.settings__sync
+	flex 1
+	margin-top 1.2em
+	
+	progress
+		height 10px
+		background-color $secondary__Color
+		-webkit-appearance none
+		position relative
+		
+		&::-webkit-progress-value
+			border-radius 5px
+			background-color $secondary__Color--available
+			box-shadow 0 1px 10px $secondary__Color--available - rgba(0,0,0,0.5)
+
+		&::-webkit-progress-bar
+			border-radius 5px
+
+.settings__sync--percentage
+	margin 1em
+	color $secondary__Color--available
+	font-weight 700
+	text-align center
+
+.settings__sync--spinner
+	margin-top -1.8em
+	margin-left 1em
+

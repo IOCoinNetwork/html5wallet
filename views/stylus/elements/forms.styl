@@ -1,0 +1,124 @@
+input[type="text"]
+input[type="date"]
+input[type="search"]
+	border 1px solid $tertiary__Color--gray
+	border-radius 3px
+	outline 0
+	padding 0.5em
+	margin 0 0.5em
+	font-weight 600
+	color $white - 40%
+	
+	&:focus
+		border-color $tertiary__Color--gray - 10%
+
+// Radio buttons switch style
+
+input.switch
+	position absolute
+	margin-left -9999px
+	visibility hidden
+	outline none
+
+input.switch + label
+	display block
+	position relative
+	cursor pointer
+	outline none
+	-webkit-user-select none
+	
+	width 65px
+	height 30px
+	border-radius 50px
+
+input.switch 
+	+ label:before
+	+ label:after
+		content ""
+		display block
+		position absolute
+		top 1px 
+		left 1px
+		bottom 1px
+
+input.switch + label:before
+	right 1px
+	background-color $tertiary__Color--gray
+	border-radius 50px
+	transition background 0.4s
+
+input.switch + label:after
+	width 22px
+	height 22px
+	position relative
+	top 4px
+	left 4px
+	background-color $white
+	border-radius 50%
+	transition margin 0.4s
+
+input.switch:checked + label:before
+	background-color $secondary__Color--available
+
+input.switch:checked + label:after
+	margin-left 35px
+
+// Checkbox design
+
+.checkbox--default
+	position relative
+	display inline
+	width 18px
+	margin-right 2em
+
+.checkbox--default label 
+	width 18px
+	height @width
+	cursor pointer
+	position absolute
+	top 0
+	left 0
+	background-color $white
+	border 1px solid $tertiary__Color--gray
+	border-radius 1px
+	z-index 20
+	
+	&:hover
+		border-color $secondary__Color--available - rgba(0,0,0,0.5)
+	
+.checkbox--default input[type=checkbox] 
+	display none
+	visibility hidden
+
+.checkbox--default input[type=checkbox]:checked + label 
+	background-color $secondary__Color--available
+	border-color transparent
+	animation checkbox_scale 0.1s linear 
+
+.checkbox--default input[type=checkbox]:checked + label:after 
+	content ""
+	background transparent
+	border 3px solid #fff
+	border-right none
+	border-top none
+	width 9px
+	height 4px
+	left 3px
+	position absolute
+	top 4px
+	transform rotate(-45deg)
+	animation checkbox_scale 0.1s linear 
+
+.checkbox--rounded
+	label
+		border-radius 50px
+	
+
+
+@-webkit-keyframes checkbox_scale
+	from
+		transform scale(0.0)
+	to
+		transform scale(1.0)
+		
+    

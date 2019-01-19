@@ -1,0 +1,95 @@
+section.messages
+	height calc(100vh - 185px)
+	align-content flex-end
+	background transparent url("../temp_assets/chat_bg.png") repeat center
+
+.messages__input
+	flex-direction row
+	align-items center
+	position fixed
+	right 0
+	bottom 0
+	left $aside--width + $favorites--width + 4px
+	height 50px
+	padding 0.5em 
+	margin 0
+	background-color $white
+	border-top 1px solid $tertiary__Color--gray
+	
+	input
+		flex 1
+		border none
+		color $gray
+		font-weight normal
+
+.messages__body
+	flex-direction row
+	align-items center
+	align-self flex-end
+	width 100%
+	margin 0.5em 0
+
+.messages__body--sent
+	@extend .messages__body
+	justify-content flex-end
+	
+	.messages__text
+		&:after
+			right -0.45em
+			border-top 1px solid black - rgba(0,0,0,0.9)
+			border-right 1px solid black - rgba(0,0,0,0.9)
+			background-color $white
+	
+.messages__body--received
+	@extend .messages__body
+	justify-content space-between
+	
+	.messages__text
+		background-color $secondary__Color--available
+		color $white
+		margin-left 0.5em
+		&:after
+			left -0.45em
+			background-color $secondary__Color--available
+				
+.messages__text
+	position relative
+	max-width 40vw
+	flex-shrink 0
+	padding 0.8em 1em
+	font-size 0.85rem
+	line-height 1.3rem
+	background-color $white
+	border-radius 3px
+	box-shadow 0 1px 2px $black - rgba(0,0,0,0.9)
+	
+	&:after
+		content ""
+		position absolute
+		top 50%
+		transform translateY(-50%) rotate(45deg)
+		width 10px
+		height @width
+
+.messages__text--details
+	margin-left 1em
+	
+.messages__time
+	color $tertiary__Color--gray - 10%
+	font-weight 600
+
+.messages__status
+	flex-direction row
+	justify-content center
+	margin-top 0.2em
+
+	.icon--outline
+		padding 0.2em
+		stroke $secondary__Color--available - rgba(0,0,0,0.5)	
+
+.messages__settings
+.messages__lock
+	line-height 11px
+	&:hover
+		.icon--outline
+			stroke $main__Color

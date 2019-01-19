@@ -1,0 +1,77 @@
+nav 
+    .category
+        padding 0.5em 1em
+        color $main__Color--dark + 10%
+        font-weight 600
+        text-transform uppercase
+        font-size 0.8rem
+        
+.tab
+    padding 1.0em 3em
+    color $main__Color--dark + 30%
+    font-weight 700
+    font-size 0.8rem
+    text-transform uppercase
+    flex-direction row
+    flex-shrink 0
+    justify-content center
+    align-items center
+    position relative
+    transition()    
+    &:hover
+        background-color $main__Color--dark + 2%
+        color @background-color + 70%
+        
+        .icon
+            fill $main__Color--dark + 20%
+    
+    .icon
+        stroke none
+        fill @color - 40%
+        transition()
+    
+.tab0
+    padding 1.2em 3em
+    color $main__Color--dark + 30%
+    font-weight 700
+    font-size 0.8rem
+    text-transform uppercase
+    flex-direction row
+    flex-shrink 0
+    justify-content center
+    align-items center
+    position relative
+    transition()    
+
+.tab--active
+    background-color $main__Color--dark - 20%
+    color $main__Color
+    &:after
+        content ""
+        position absolute
+        top 50%
+        right 0
+        width 0
+        height 0
+        border-top 8px solid transparent
+        border-bottom @border-top
+        border-right 6px solid $main__Color
+        transform translateY(-50%)
+        
+    .icon
+        fill $main__Color !important
+        & *[data-color="color-2"]
+            fill $main__Color--accent
+    &:hover
+        background-color @background-color
+        color @color
+            
+.tab__name
+    margin 0 1.7em
+    flex 1
+    
+.tab__tick
+    position absolute
+    top 50%
+    right 1em
+    transform translateY(-50%)

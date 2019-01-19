@@ -1,0 +1,165 @@
+.history__filter
+    span
+        font-size 0.7rem
+        color $white - 40%
+
+.history__table
+    background-color $white
+    width 100%
+    margin 1em
+    border 1px solid $tertiary__Color--gray
+    border-radius 5px
+
+// Base row styles
+
+.history__row
+    flex-direction row
+    align-items center
+    border 1px solid $tertiary__Color--gray
+    border-right 0
+    border-left 0
+    border-bottom 0
+
+    &:hover
+        background-color $white - 1.5%
+
+// Row type (header, sent, received)
+
+// Header
+.history__row--header
+    @extend .history__row
+    border 0
+
+    &:hover
+        background-color initial
+
+    .history__col
+        padding 0
+        font-size 0.7rem
+        font-weight 700
+        text-transform uppercase
+        border-right 1px solid $tertiary__Color--gray
+
+        &:last-child
+            border-right 0
+
+    .sort
+        padding 2em
+        flex-direction row
+        color $white - 40%
+        width 100%
+        &:hover
+            background-color $white - 2%
+
+        &:first-child
+            border-top-left-radius 6px
+
+        &:last-child
+            border-top-right-radius 6px
+
+        span
+            margin auto
+        
+        .icon--glyph
+            fill $white - 40%
+    
+    .sort--active
+        @extend .history__row--header .sort
+        color $main__Color
+        background-color $white - 2%
+        
+        .icon
+            fill $main__Color
+
+// Received
+.history__row--received
+    @extend .history__row
+    //background-color $secondary__Color--available - rgba(0,0,0,0.9)
+    //border-color $secondary__Color--available - rgba(0,0,0,0.85)
+
+    .glyph
+        fill $secondary__Color--available
+
+// Sent
+.history__row--sent
+    @extend .history__row
+    //background-color $main__Color--accent - rgba(0,0,0,0.95)
+    //border-color $main__Color--accent - rgba(0,0,0,0.9)
+    .glyph
+        fill $main__Color--accent
+
+.history__col
+    width 20%
+    min-width 15%
+    padding 1.5em
+    flex-direction row
+    align-items center
+    justify-content center
+
+    &:first-child
+        justify-content flex-start
+        flex 1
+
+        .sort
+        .sort--active
+            span
+                flex 1
+
+    &:last-child
+        justify-content flex-end
+
+    span.address
+        margin 0 0.5em
+        padding 0.3em 0.4em
+        font-size 1vw
+        font-weight 300
+        color $white - 40%
+        background-color $white - 2%
+        border 1px solid $tertiary__Color--gray
+        border-radius 20px
+        -webkit-user-select text
+        cursor text
+
+    span.date
+        color $white - 40%
+        font-weight 300
+
+
+    span.conf
+        padding 0.3em 0.55em
+        font-weight 600
+        font-size 0.8rem
+        border-width 1px
+        border-style solid
+        border-radius 20px
+
+    span.conf--received
+        @extend .history__col span.conf
+        color $secondary__Color--available
+
+    span.conf--pending
+        @extend .history__col span.conf
+        color $secondary__Color--pending
+
+    span.amount
+        margin-right 0.5em
+        padding 0.3em 0.7em
+        font-size 1.1vw
+        font-weight 700
+        border-radius 20px
+        color $white
+
+    span.amount--received
+        @extend .history__col span.amount
+        background-color $secondary__Color--available
+
+    span.amount--sent
+        @extend .history__col span.amount
+        background-color $main__Color--accent
+
+
+    span.amount__decimal
+        font-size 80%
+
+.favorites + .wrapper .history__col
+        flex 1

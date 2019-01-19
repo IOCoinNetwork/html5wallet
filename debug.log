@@ -1,0 +1,48 @@
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  13ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  16ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  16ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  13ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  8ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  24ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  12ms
+Flush(true) db not started
+I/OCoin exited
+
+Flush(false) db not started
+StopNode()
+Flushed 0 addresses to peers.dat  16ms
+Flush(true) db not started
+I/OCoin exited
+

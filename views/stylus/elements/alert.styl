@@ -1,0 +1,71 @@
+.alert__dropdown
+	position absolute
+	top 45px
+	left 50%
+	transform translateX(-50%)
+	width 17rem
+	background-color $white
+	border 1px solid $tertiary__Color--gray
+	border-radius 5px	
+	box-shadow 0 3px 5px $main__Color--dark - rgba(0,0,0,0.9)
+	
+	&:before
+		content ""
+		width 15px
+		height 15px
+		position absolute
+		top -0.7em
+		left 50%
+		transform translateX(-50%) rotate(45deg)
+		background-color $white
+		border-top 1px solid $tertiary__Color--gray
+		border-left @border-top
+		
+	span
+		text-align center
+		font-weight 700
+		font-size 0.9rem
+		color $main__Color
+		margin 1em 0
+
+.alert__inner
+	padding 0 0 0 1.3em
+	background $white
+	border-top 1px solid $tertiary__Color--gray
+	position relative
+	
+	&:before
+		content ""
+		width 1px
+		background-color $tertiary__Color--gray
+		height 100%
+		position absolute
+		top 0
+		left 1em
+		
+a.alert__card--unread
+	background-color $white - 2%
+	border 1px solid $tertiary__Color--gray 
+	padding 2em
+	margin 1em
+	position relative
+	
+	&:before
+		content ""
+		width 16px 
+		height @width
+		background-color $main__Color
+		position absolute
+		top 50%
+		transform translateY(-50%)
+		left -2em 
+		border-radius 50%
+		border 2px solid $white
+
+a.alert__card--read
+	@extend a.alert__card--unread
+	background-color $white
+	border-color $tertiary__Color--gray - rgba(0,0,0,0.5)
+
+	&:before
+		background-color $tertiary__Color--gray

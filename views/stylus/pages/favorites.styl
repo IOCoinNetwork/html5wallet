@@ -1,0 +1,194 @@
+.favorites
+	font-size 1rem
+	width $favorites--width
+	position fixed
+	top 64px
+	left $aside--width + 4px
+	bottom 0
+	background-color $white
+	border-right 1px solid $tertiary__Color--gray
+	
+.favorites__controls
+	border-bottom 1px solid $tertiary__Color--gray
+	padding 0.6em 1em
+	flex-direction row
+	justify-content space-between
+	align-items center
+	background-color $white
+	
+.favorites__list
+	flex-direction row
+	align-items center
+	position relative
+	padding 1em 
+	font-weight 600
+	background-color $white
+	border-bottom 1px solid $tertiary__Color--gray
+	
+	&:hover
+		background-color $white - 3%
+	
+	.favorites__tick
+		background-color $main__Color
+
+.favorites__list--active
+	@extend .favorites__list
+	background-color $main__Color
+	border-bottom none
+	
+	&:hover
+		background-color $main__Color - 5% 
+
+	.favorites__name
+		color $white
+		
+	.favorites__cap
+		background-color $white
+		color $white - 60%
+	
+	.favorites__tick
+		background-color $main__Color - 30%
+		
+.favorites__cap
+	width 48px
+	height @width - 1px
+	flex-shrink 0
+	justify-content center
+	align-items center
+	border-radius 50%
+	color $white
+	background-color $main__Color
+	transition all 0.2s linear
+
+.favorites__cap_0
+	width 48px
+	height @width - 1px
+	flex-shrink 0
+	justify-content center
+	align-items center
+	border-radius 50%
+	color $white
+	background-color $secondary__Color
+	transition all 0.2s linear
+	
+.favorites__name
+	margin-left 0.5em
+	color $white - 60%
+	line-height 1.3em
+	transition()
+	
+	span:last-child
+		font-size 0.7rem
+		font-weight normal
+		opacity 0.4
+
+.favorites__tick
+	position absolute
+	top 30%
+	transform translateY(-30%)
+
+section.favorites__entry
+	background-color $white
+
+	& + .title--secondary
+		margin 0.2em 0
+		
+.wrapper
+	margin-left 20rem 
+	
+.entry__container
+	flex-direction row
+	justify-content center
+        width 100%
+	align-items center
+	padding 4em
+
+.entry__cap
+	@extends .favorites__cap
+	width 68px
+	height @width - 1px
+	font-size 1.5rem
+	font-weight 700
+	margin-right 0.3em
+
+.entry__cap--unset
+	@extends .entry__cap
+	background-color $tertiary__Color--gray
+
+.entry__details
+	padding 0.5em
+	line-height 1
+
+.entry__name_0
+	font-size 18pt 
+	font-weight 800
+	letter-spacing -2px
+	color $gray
+	margin-bottom 0.3em
+	align-items center
+	flex-direction row
+	
+	span
+		padding-right 0.2em
+		
+	.glyph
+		fill $white - 10%
+		
+	a
+		display inline-flex
+		padding 0 0.2em
+		
+		&:hover
+			.glyph
+				fill $main__Color--accent
+	
+.entry__name
+	font-size 2.5rem
+	font-weight 800
+	letter-spacing -2px
+	color $gray
+	margin-bottom 0.3em
+	align-items center
+	flex-direction row
+	
+	span
+		padding-right 0.2em
+		
+	.glyph
+		fill $white - 10%
+		
+	a
+		display inline-flex
+		padding 0 0.2em
+		
+		&:hover
+			.glyph
+				fill $main__Color--accent
+	
+.entry__address
+	font-weight 400 
+	color $white - 40%
+	background-color $secondary__Color
+	padding 0.5em
+	border-radius 20px
+
+.sentry__address
+	font-weight 400 
+	color $white - 40%
+	background-color $secondary__Color
+	padding 0.5em
+	border-radius 20px
+
+.entry__alias
+	font-weight bold 
+	color $main__Color
+	background-color $white
+	padding 0.5em
+	border-radius 20px
+
+.entry__alias_0
+	font-weight 400 
+	color $main__Color
+	background-color $white
+	padding 0.5em
+	border-radius 20px

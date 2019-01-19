@@ -1,0 +1,155 @@
+include _icons.jade
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title= "I/O Coin Wallet"
+        link(rel="stylesheet" type="text/css" href="views/css/style.css")
+        link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800;' rel='stylesheet' type='text/css')
+        link(rel="stylesheet" href="https://fontastic.s3.amazonaws.com/TbqpYdvAZUbdZodmzRKM7L/icons.css")
+    body
+        aside.collapsed
+            .logo
+                i(class="icon-iocoin")
+            nav
+                span.category Wallet
+                a(class="tab" href="index.html")
+                    +icon-home
+                    span.tab__name Overview
+                a(class="tab" href="history.html")
+                    +icon-transaction
+                    span.tab__name Transactions
+                    .tab__tick 9
+                a(class="tab tab--active" href="book.html")
+                    +icon-star
+                    span.tab__name Address Book
+                a(class="tab" href="#")
+                    +icon-settings
+                    span.tab__name Settings
+                span.category I/O Services
+                a(class="tab" href="#")
+                    +icon-buy
+                    span.tab__name Buy I/O Coin
+                a(class="tab" href="#")
+                    +icon-gift
+                    span.tab__name Gifts
+                a(class="tab" href="#")
+                    +icon-community
+                    span.tab__name I/O Community
+
+        header
+            .search
+                +icon-search 
+                input(type="search" name="header-search" placeholder="Search...")
+            .alert
+                a(class="alert__active" href="alert.html")
+                    +icon-bell
+                    .alert__tick 9
+            .controls
+                a(href="#") 
+                    +icon-minimize
+                a(href="#")
+                    +icon-maximize
+                a(href="#" onclick="location.reload()")
+                    +icon-close
+
+        main.alt
+            .favorites
+                .favorites__controls
+                    .favorites__add
+                        a.btn(class="btn--icon-small tooltip tooltip-e" href="#" aria-label="New Contact")
+                            mixin icon-maximize
+                    .favorites__modify   
+                        a.btn(class="btn--icon-small-green tooltip tooltip-n" href="#" aria-label="Edit")
+                            mixin icon-edit
+                        a.btn(class="btn--icon-small-red tooltip tooltip-n" href="#" aria-label="Delete")
+                            mixin icon-delete
+
+                a(class="favorites__list" href="#")
+                    .favorites__cap
+                        span Op
+                    .favorites__name
+                        span Ophie-IO
+
+                a(class="favorites__list--active" href="#")
+                    .favorites__cap
+                        span Pa
+                    .favorites__name
+                        span Patman-IO
+
+                a(class="favorites__list" href="#")
+                    .favorites__cap
+                        span Wi
+                    .favorites__name
+                        span Wiz-IO
+
+
+            .wrapper
+
+                section.favorites__entry
+                    .entry__container
+
+                        .entry__cap
+                            span Pa
+
+                        .entry__details
+                            .entry__name 
+                                span Patman-IO
+                                a(class="tooltip tooltip-n" href="#" aria-label="Send I/O Coin")
+                                    +icon-send  
+                                a(class="tooltip tooltip-n" href="#" aria-label="Receive Payment") 
+                                    +icon-receive
+                            .entry__address 1Baup4vVMw218kj9XsCeEA7ynC7etQNXE1
+ 
+                        
+
+
+                .title(class="title--secondary")
+                    h2 Transactions with Patman
+                    a.btn(class="btn--icon tooltip tooltip-n" href="#" aria-label="Table view")
+                        +icon-table
+                    a.btn(class="btn--icon tooltip tooltip-n" href="#" aria-label="Card view")
+                        +icon-cards
+
+                section.history
+                    section.column
+                        .card(class="card--received")
+                            .card__top
+                                .card__amount 5780
+                                    span.card__amount--decimal .5600
+                                a.btn(class="btn--star-add tooltip tooltip-n" href="#" aria-label="Add to favorites") 
+                                    +icon-star-add
+                            .card__address 1Baup4vVMw218kj9XsCeEA7ynC7etQNXE1
+                            .card__date 2 hours ago
+                            .card__conf(class="card__conf--pending")
+                                +icon-pending
+                                progress(max=6 value=3)
+                                span.tick 3
+
+                        .card(class="card--received")
+                            .card__top
+                                .card__amount 5780
+                                    span.card__amount--decimal .5600
+                                a.btn(class="btn--star-add tooltip tooltip-n" href="#" aria-label="Add to favorites") 
+                                    +icon-star-add
+                            .card__address 1Baup4vVMw218kj9XsCeEA7ynC7etQNXE1
+                            .card__date 2 hours ago
+                            .card__conf(class="card__conf--pending")
+                                +icon-pending
+                                progress(max=6 value=3)
+                                span.tick 3
+                    
+                    section.column
+                        .card(class="card--spent")
+                            .card__top
+                                .card__amount 1658
+                                    span.card__amount--decimal .9654
+                                a.btn(class="btn--star-remove tooltip tooltip-nw" href="#" aria-label="Remove from favorites") 
+                                    +icon-star-remove
+                            .card__address 1Baup4vVMw218kj9XsCeEA7ynC7etQNXE1
+                            .card__date 13 days ago
+                            .card__conf(class="card__conf--available")
+                                +icon-check
+                                progress(max=6 value=6)
+                                span.tick 473

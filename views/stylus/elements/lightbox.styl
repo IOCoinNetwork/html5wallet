@@ -1,0 +1,113 @@
+$br = 7px
+
+.lightbox
+	position absolute
+	top 0
+	right 0
+	bottom 0
+	left 0
+	background-color $main__Color--dark - rgba(0,0,0,0.5)
+	z-index 20
+	justify-content center
+	align-items center
+	animation lightboxFade 0.2s ease-in-out
+
+.lightbox__container
+	padding 2em
+	width 50vw
+	background-image -webkit-linear-gradient(-60deg, $main__Color - rgba(0,0,0,0.05), $tertiary__Color--splash - rgba(0,0,0,0.05))
+	border-radius $br
+	box-shadow 0 2px 20px $black - rgba(0,0,0,0.7)
+	animation fadeMove 0.2s ease-in-out
+	
+.lightbox__header
+	flex-direction row
+	justify-content space-between
+	
+	h2
+		color $white
+
+	.icon--outline
+		width 18px
+		height @width
+		stroke $white
+		stroke-width 2
+        
+.lightbox__content
+	padding 1em 0
+
+	&:before
+		content ""
+		width 10%
+		height 1px
+		background-color $white - rgba(0,0,0,0.8)
+		margin-bottom 1.5em
+
+.lightbox__passphrase
+	position relative
+	flex-direction row
+
+	input
+		background-color $white - rgba(0,0,0,0.9)
+		border-color transparent
+		color $white
+		width 100%
+		outline none
+		padding 0.5em 0.8em
+		border-radius 3px
+		
+		&:focus 
+			box-shadow 0 0 10px $black - rgba(0,0,0,0.95)
+	
+		&::-webkit-input-placeholder
+			color $white - rgba(0,0,0,0.2)
+			font-weight 300
+
+	.lightbox--error
+		will-change transform
+		animation error 0.5s ease-in-out
+		
+		
+		
+
+	.icon--glyph
+		position absolute
+		right 10px
+		top 10px
+		fill white - rgba(0,0,0,0.7)
+
+.lightbox__buttons
+	flex-direction row
+	justify-content center
+
+.lightbox__row
+	margin 1em 
+	align-items center
+	flex-direction row
+
+@keyframes lightboxFade 
+	from 
+		opacity 0
+	to
+		opacity 1
+
+@keyframes fadeMove
+	from
+		opacity 0
+		transform translateY(2em)
+	to
+		opacity 1
+		transform translateY(0)
+
+@keyframes error
+	0%
+		background-color initial
+	33%
+		background-color $main__Color--accent
+		transform: translate3d(8px, 0, 0);
+	67%
+		transform: translate3d(-8px, 0, 0);
+	100%
+		background-color initial
+		
+		

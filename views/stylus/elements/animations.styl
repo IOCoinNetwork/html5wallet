@@ -1,0 +1,59 @@
+op(value)
+	opacity value
+
+$timing = cubic-bezier(.17,.21,.1,.84)
+
+.hidden
+	visibility hidden
+
+main
+	animation tab-fade 0.2s ease-in-out
+	
+@-webkit-keyframes tab-fade
+	0%
+		opacity 0
+		//transform scale(0.95)
+	50%
+		//transform scale(1)
+	100%
+		opacity 1
+        
+.fade--in
+	animation fade-in 0.5s ease-in 6s
+	animation-fill-mode both
+
+@-webkit-keyframes fade-in
+	from
+		op(0)
+	to
+		op(1)
+		 
+.logo--loading
+	.icon--glyph
+		animation logo 1.5s ease-in-out infinite alternate
+		animation-fill-mode both
+		border-radius 50%
+
+.logo--move
+	animation logo-move 1.5s $timing 4s
+	animation-fill-mode both
+
+@-webkit-keyframes logo-move
+	from
+		transform translateX(170%)
+	to
+		transform translateX(0)	
+
+@-webkit-keyframes logo
+	to
+		box-shadow inset 0 0 40px $white, 0 0 40px $white
+
+.hero--move
+	animation hero-move 1.5s $timing 2s
+	animation-fill-mode both
+
+@-webkit-keyframes hero-move
+	from
+		transform translateY(210%)
+	to
+		transform translateY(0)

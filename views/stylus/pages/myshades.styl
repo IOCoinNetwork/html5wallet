@@ -1,0 +1,66 @@
+section.myshades
+	background-color $white
+	margin 0.2em 0
+	padding 1em 2em
+	flex-direction column
+
+.myshades__primary
+	flex-direction row
+	align-items center
+	justify-content space-between
+	border-bottom 1px solid $tertiary__Color--gray
+	padding 1em 0
+	padding-bottom 2em
+	margin-bottom 2em
+	
+
+.myshades__primary--not
+	@extend .myshades__primary
+	margin-bottom 0
+	border-bottom 1px dashed $tertiary__Color--gray
+	
+	&:last-child
+		border-bottom none
+
+.sentry__left
+.sentry__right
+	flex-direction row
+	align-items center
+
+.sentry__status
+	width 16px
+	height @width
+	border-radius 50%
+	cursor pointer
+	
+.sentry__status--active
+	@extend .sentry__status
+	background-color $secondary__Color--available
+	
+.sentry__status--pending
+	@extend .sentry__status
+	background-color $secondary__Color--pending
+
+.sentry__status--inactive
+	@extend .sentry__status
+	background-color $main__Color--accent
+
+.sentry__address
+	-webkit-user-select text
+	cursor text
+	margin-top 0.5em
+	overflow-wrap break-word
+	width 330px
+
+
+.sentry__alias
+	-webkit-user-select text
+	cursor text
+	margin-top 0.5em
+	overflow-wrap break-word
+
+.sentry__alias_0
+	-webkit-user-select text
+	cursor text
+	margin-top 0.5em
+	overflow-wrap break-word

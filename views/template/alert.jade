@@ -1,0 +1,143 @@
+include _icons.jade
+
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        title= "I/O Coin Wallet"
+        link(rel="stylesheet" type="text/css" href="views/css/style.css")
+        link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;Raleway:300,700' rel='stylesheet' type='text/css')
+        link(rel="stylesheet" href="https://fontastic.s3.amazonaws.com/TbqpYdvAZUbdZodmzRKM7L/icons.css")
+    body
+        aside
+            .logo
+                i(class="icon-iocoin")
+            nav
+                span.category Wallet
+                a(class="tab tab--active" href="index.html")
+                    +icon-home
+                    span.tab__name Overview
+                a(class="tab" href="history.html")
+                    +icon-transaction
+                    span.tab__name Transactions
+                    .tab__tick 9
+                a(class="tab" href="book.html")
+                    +icon-star
+                    span.tab__name Address Book
+                a(class="tab" href="#")
+                    +icon-settings
+                    span.tab__name Settings
+                span.category I/O Services
+                a(class="tab" href="#")
+                    +icon-buy
+                    span.tab__name Buy I/O Coin
+                a(class="tab" href="#")
+                    +icon-gift
+                    span.tab__name Gifts
+                a(class="tab" href="#")
+                    +icon-community
+                    span.tab__name I/O Community
+        
+
+        header
+            .search
+                +icon-search 
+                input(type="search" name="header-search" placeholder="Search...")
+            .alert
+                a(class="alert__active" href="alert.html")
+                    +icon-bell
+                    .alert__tick 9
+
+                .alert__dropdown
+                    span Notifications 
+                    .alert__inner
+                        a.alert__card--unread(href="#") You received some cash
+                        a.alert__card--read(href="#") You received some cash
+
+
+            .controls
+                a(href="#") 
+                    +icon-minimize
+                a(href="#")
+                    +icon-maximize
+                a(href="#" onclick="location.reload()")
+                    +icon-close
+
+        main
+            // Wallet Overview
+            .title(class="title--main")
+                h1 My Wallet
+                a.btn(class="btn--outline" href="#") Send
+            section.balance    
+                section.column
+                    .card(class="card--available")
+                        .card__amount 192
+                            span.card__amount--decimal .041548
+                        +icon-check
+
+                section.column
+                    .card(class="card--pending")
+                        .card__amount 5780
+                            span.card__amount--decimal .5600
+                        +icon-pending
+            
+            .title(class="title--secondary")
+                h2 Recent Transactions
+                a.btn(class="btn--icon tooltip tooltip-n" href="#" aria-label="Table view")
+                    +icon-table
+                a.btn(class="btn--icon tooltip tooltip-n" href="#" aria-label="Card view")
+                    +icon-cards
+
+            section.history
+                .history__table
+                    .history__row--header
+                        .history__col 
+                            a.sort(href="#") 
+                                span Address
+                                +icon-sort
+                        .history__col 
+                            a.sort(href="#")
+                                span Date
+                                +icon-sort
+                        .history__col 
+                            a.sort(href="#")
+                                span Confirmations
+                                +icon-sort
+                        .history__col 
+                            a.sort(href="#")
+                                span Amount 
+                                +icon-sort                     
+
+                    .history__row--received
+                        .history__col
+                            a.btn(class="btn--star-add tooltip tooltip-n" href="#" aria-label="Add to favorites") 
+                                +icon-star-add 
+                            span.address 1Baup4vVMw218kj9XsCeEA7ynC7etQNXE1
+                            +icon-receive-arrow
+                        .history__col 
+                            span.date 2 days ago
+                        .history__col 
+                            span.conf--received 473
+                        .history__col 
+                            span.amount--received 5780
+                                span.amount__decimal .5600
+                            a(class="tooltip tooltip-n" href="#" aria-label="Transaction details")
+                                +icon-down-arrow
+
+                    .history__row--sent
+                        .history__col 
+                            a.btn(class="btn--star-remove tooltip tooltip-n" href="#" aria-label="Remove from favorites") 
+                                +icon-star-remove
+                            span.address Patman-IO
+                            +icon-send-arrow
+                        .history__col 
+                            span.date 12 minutes ago
+                        .history__col 
+                            span.conf--pending 3
+                        .history__col 
+                            span.amount--sent 5780
+                                span.amount__decimal .5600
+                            a(class="tooltip tooltip-n" href="#" aria-label="Transaction details")
+                                +icon-down-arrow
+
+            a.btn(class="btn--outline" href="#") Show all transactions

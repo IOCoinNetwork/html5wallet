@@ -1,0 +1,72 @@
+$icon-size = 42px
+
+aside
+    background-color $main__Color--dark
+    border-right 4px solid $main__Color
+    position fixed
+    top 0
+    bottom 0
+    left 0
+    width $aside--width
+    -webkit-user-select none
+
+.logo
+    min-height 4rem
+    background-color $main__Color
+    border-top 1px solid $white - rgba(0,0,0,0.75)
+    border-left @border-top
+    color $white
+    justify-content center
+    align-items center
+    -webkit-app-region drag
+
+    .icon
+        width $icon-size
+        height $icon-size 
+        fill $white
+
+.avatar
+    height 7rem
+    flex-shrink 0
+    justify-content center
+    align-items center
+	
+.avatar__image
+    background -webkit-linear-gradient(-40deg, $main__Color, $main__Color--accent)
+    padding 0.3em
+    line-height 11px
+    border-radius 50%
+    box-shadow 0 0 15px $black - rgba(0,0,0,0.5)
+
+    img
+        border-radius 50%
+        transition()
+        &:hover
+            opacity 0.5
+
+.sidebar__sync
+    padding 2em
+    position absolute
+    bottom 0
+    left 0
+    right 0
+    align-items center
+    
+    progress
+        height 5px
+        background-color $main__Color--dark
+        -webkit-appearance none
+        position relative
+        margin-bottom 0.5em
+        
+        &::-webkit-progress-value
+            border-radius 5px
+            background-color $secondary__Color--available
+
+        &::-webkit-progress-bar
+            background-color $main__Color--dark - 20%
+            border-radius 5px
+    
+    .spinner > div
+        width 5px
+        height @width

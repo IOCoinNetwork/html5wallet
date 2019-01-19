@@ -1,0 +1,130 @@
+header
+    background-color $secondary__Color - rgba(0,0,0,0.04)
+    height 4rem
+    padding 1em
+    border-bottom 1px solid $tertiary__Color--gray
+    margin-left calc(16rem + 8px)
+    flex-direction row
+    align-items center
+    box-sizing border-box
+    position fixed
+    top 0
+    width calc(100% - 264px)
+    z-index 20
+        
+.search
+    align-items center
+    flex 1
+    flex-direction row
+
+    input[type="search"]
+        border 0
+        outline 0
+        background none
+        color $gray
+        font-size 1rem
+        font-weight 300
+        margin-left 0.5em
+
+.search__results
+    position absolute
+    top 64px
+    left 0
+    width 100%
+    
+    a
+        padding 2em 1em 
+        background-color $white - rgba(0,0,0,0.1)
+        border-bottom 1px solid $tertiary__Color--gray
+        font-weight 600
+        color $gray + 30%
+        flex-direction row
+        align-items center
+        justify-content space-between
+        
+        span
+            margin-left 1em     
+
+        &:hover
+            background-color $secondary__Color--available - rgba(0,0,0,0.1)
+            color $white
+            border-bottom-color transparent
+        
+            .icon--outline
+                stroke $white 
+            
+            & > .icon--glyph
+                transform translateX(0)
+                opacity 1
+
+        &:last-child
+            box-shadow 0 10px 20px $black - rgba(0,0,0,0.92)
+        
+        .icon--glyph
+            fill $white
+            opacity 0
+            transform translateX(-2em)
+            transition all 0.3s ease-in-out
+            
+
+
+.search__results--item
+    align-items center
+    flex-direction row
+    
+.alert
+    margin 0 1.5em
+    position relative
+    
+    a
+        border-radius 3px
+        padding 0.5em
+        flex-direction row
+        
+    .icon
+        fill none
+        
+    .alert__active
+        
+        & .icon
+            fill $main__Color
+            stroke none
+            
+            & * [data-color="color-2"]
+                fill $main__Color--accent
+
+.alert__tick
+    background-color $main__Color--accent
+    border 2px solid $secondary__Color
+    border-radius 50px
+    padding 2px 4px
+    color $white
+    font-size 9px
+    position absolute
+    top 0
+    left 1.8em
+        
+.controls
+    flex-direction row
+    
+    a
+        margin 0 0.7em
+        
+        &:last-child
+            margin-right 0
+            
+        &:hover
+            .icon
+                stroke $main__Color
+
+
+.indicators
+    
+    .settings__lock
+        
+        .icon--glyph
+            width 18px
+            height @width
+
+.indicators a
+    margin 0 0.5em

@@ -1,0 +1,220 @@
+// Base styles for buttons
+
+.btn
+    font-size 0.95rem
+    font-weight 600
+    line-height 11px
+    padding 0.65em 1.2em
+    border-radius 50px
+    margin 0 0.5em
+    position relative
+    transition()
+    &:last-child
+        margin-right 0
+    &:first-child
+        margin-left 0
+
+// Blue button 
+.btn--grey
+    @extend .btn
+    background-color #a9a9a9
+    color $white
+    border 2px solid transparent
+    
+    &:hover
+        background-color @background-color - 20%
+
+.btn--yellow
+    @extend .btn
+    background-color #ffff00
+    color $white
+    border 2px solid transparent
+    
+    &:hover
+        background-color @background-color - 20%
+
+.btn--white
+    @extend .btn
+    background-color $white
+    color $white
+    border 2px solid transparent
+    
+    &:hover
+        background-color @background-color - 20%
+
+.btn--blue
+    @extend .btn
+    background-color $main__Color
+    color $white
+    border 2px solid transparent
+    
+    &:hover
+        background-color @background-color - 20%
+
+// Green button
+
+.btn--green
+    @extend .btn--blue
+    background-color $secondary__Color--available
+    
+    &:hover
+        background-color @background-color - 20%
+
+// Red button
+
+.btn--red
+    @extend .btn--blue
+    background-color $main__Color--accent
+    
+    &:hover
+        background-color @background-color - 20%
+// Button with both icon and text
+
+.btn--hicon
+    span
+        transition()
+
+    .icon
+        opacity 0
+        position absolute
+        left -1em
+        top 50%
+        transform translateY(-50%)
+        width 14px
+        height @width
+        transition()
+    
+    .icon--outline
+        @extend .btn--hicon .icon
+        stroke $white
+        stroke-width 3
+
+    .icon--glyph
+        @extend .btn--hicon .icon
+        fill $white
+
+    &:hover
+        .icon 
+            opacity 1
+            left 0.8em
+        span
+            margin-left 0.9em
+
+// Outline button
+
+.btn--outline
+    color $white - 30%
+    border 2px solid $white - 10%
+    
+    &:hover
+        color $white
+        background-color $main__Color--accent
+        border-color @background-color
+
+// Buttons that only have an icon
+// Standard outline, hover main color
+
+.btn--icon
+    padding 0.6em 0.65em
+    border 2px solid $tertiary__Color--gray
+    
+    &:hover
+        background-color $main__Color
+        border-color $main__Color
+        
+        .icon--outline
+            stroke $white
+            
+        .icon--glyph
+            fill $white
+            
+    .icon
+        transition()
+        stroke $white - 30%
+
+// Standard outline hover alert color
+.btn--icon-hred
+    @extend .btn--icon
+    &:hover
+        background-color $main__Color--accent
+        border-color @background-color
+        
+// Red icon button
+.btn--icon-red
+    @extend .btn--icon
+    border 2px solid transparent
+    background-color $main__Color--accent
+    
+    .icon--outline
+        stroke $white
+    
+    .icon--glyph
+        fill $white
+
+    &:hover
+        background-color $main__Color--accent - 20%
+        border-color transparent
+        
+
+// Small versions of the button icon 
+
+.btn--icon-small
+    @extend .btn--icon
+    border-width 1px
+    padding 0.4em
+    display inline-flex
+    
+    .icon
+    .glyph
+        stroke-width 2
+        width 13px
+        height @width
+        
+    .glyph
+        fill $white - 20%
+
+.btn--icon-small-green
+    @extend .btn--icon-small
+    
+    &:hover
+        background-color $secondary__Color--available
+        border-color @background-color
+
+.btn--icon-small-red
+    @extend .btn--icon-small
+    
+    &:hover
+        background-color $main__Color--accent
+        border-color @background-color
+
+// Special buttons/links
+
+.btn--star-add
+    padding 0
+    margin 0
+    border 0
+    
+    &:hover
+        .icon
+            stroke $white - 30%
+            
+        .icon *[data-color="color-2"]
+            stroke $secondary__Color--available
+    
+    .icon
+        stroke $white - 20%
+            
+.btn--star-remove
+    @extend .btn--star-add
+    
+    &:hover
+        .icon *[data-color="color-2"]
+            stroke $main__Color--accent
+
+// Positioning button classes
+
+.btn--center
+    align-self center
+
+.btn--nostretch
+    align-self flex-start

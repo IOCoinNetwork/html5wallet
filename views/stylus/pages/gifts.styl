@@ -1,0 +1,45 @@
+.gifts
+	padding 2em
+	flex-direction column
+
+.gifts__hero
+	display flex
+	align-items center
+	justify-content space-between
+	padding-bottom 2em
+	border-bottom 1px solid $tertiary__Color--gray
+	
+.gifts__icon
+	border-radius 50%
+	background-color $white
+	padding 1em 1.1em
+	
+	.icon--glyph
+		width 48px
+		height @width
+		fill $main__Color
+		
+		& * [data-color="color-2"]
+			fill $main__Color--accent
+		    
+.gifts__description
+	width 80%
+	
+	p 
+		margin-top 0.5em
+		color $gray + 30%
+		line-height 1.5
+
+.gifts__create
+	padding 2em 0
+
+.gifts 
+	.dest__entry > .dest__details
+		transform translateX(0)
+	
+	.dest__entry
+		margin-bottom 2em
+	
+	&:hover
+		transform translateX(0)
+		

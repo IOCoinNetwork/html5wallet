@@ -1,0 +1,198 @@
+// Sender 
+
+section.send
+	background-color $white
+	margin 0.2em 0
+	padding 2em 
+
+.send__source
+	flex-direction row
+	align-items center
+	justify-content space-between
+	width 100%
+	padding-bottom 3em
+	margin-bottom 2em
+	border-bottom 2px solid $secondary__Color
+	
+.send__right
+	flex-direction row
+	align-items center
+
+.send__source__balance
+	flex-direction column
+	color $secondary__Color--available
+	line-height 1.5em
+	font-size 1rem
+
+.send__check
+	margin-left 1.5em
+	
+.send__source__amount
+	font-size 1.5rem
+	font-weight 800
+	
+	&--decimal
+		font-size 80%
+		opacity 0.8
+		
+.send__name
+	@extend .entry__name
+
+.send__address
+	@extend .entry__address
+
+// Payee, second step
+
+.dest
+	flex-wrap wrap
+	width 100%
+	margin-bottom 2em
+	padding-bottom 2em
+	border-bottom 2px solid $secondary__Color
+
+// The payee cards
+
+.dest__entry
+	background-color $secondary__Color--available
+	color $white
+	padding 0.8em
+	margin-top 1.5em
+	line-height 1.7em
+	flex 1
+	flex-direction row
+	align-items center
+	border-radius 3px
+	
+	&:first-child
+		margin-top 0
+
+	&:hover > a
+	&:hover > .dest__details
+		opacity 1
+		transform translateX(-0.25em)
+		
+		
+	a
+		opacity 0
+		padding 0.3em
+		margin-right 0.25em
+		line-height normal
+		transform translateX(-2.5em)
+		transition()
+
+		.icon--outline
+			stroke $white - rgba(0,0,0,0.5)
+			transition()
+
+		&:hover
+			
+			.icon--outline
+				stroke $white
+		
+	.icon--outline
+		stroke $white
+		stroke-width 3
+		vertical-align middle
+		
+	input[type="text"]
+		padding-left 0.8em
+		margin 0
+		background-color transparent
+		border 0
+		font-size 1.5rem
+		font-weight 700
+		text-align right
+		color $white
+		
+		&::-webkit-input-placeholder
+			color $white
+
+.dest__entry_error
+	background-color $red
+
+// Empty state for the payee card
+
+.dest__entry--empty
+	@extend .dest__entry
+	
+	input[type="text"]
+		text-align left
+		
+		&::-webkit-input-placeholder
+			font-weight 300
+			color $white - rgba(0,0,0,0.5)
+
+.dest__details
+	flex 1
+	transform translateX(-2em)
+	transition()
+	
+.dest__name
+	font-weight 700
+	font-size 1.3em
+
+.dest__address
+	color $white - rgba(0,0,0,0.3)
+
+.send__amount
+	flex-direction row
+	align-items center
+	transition()
+	
+	&:after
+		content "IOC"
+		font-size 1.5rem
+		font-weight 700
+		color $white - rgba(0,0,0,0.5)
+		
+// Send and confirmation input
+
+.send__dialogue
+	width 100%
+	padding 1em
+	background-color $secondary__Color
+	border-radius 3px
+
+.send__row
+	flex-direction row
+	justify-content space-between
+	align-items center
+	padding 1em 0
+	
+	&:first-child
+		padding-bottom 0.5em
+		padding-top 0
+	
+	&:nth-child(2)
+		padding-top 0.5em
+		padding-bottom 1.5em
+		margin-bottom 0.5em
+		border-bottom 1px solid $white - 10%
+		
+		span
+			font-size 1.2rem
+			font-weight 700
+		
+	&:last-child
+		border-bottom 0
+		padding-bottom 0
+		
+.send__fee--details span
+	color $gray
+
+.send__fee--amount span
+	color $red
+	font-weight 700
+	font-size 1.2rem
+
+	&:after
+		content "IOC"
+		margin-left 0.4em
+		opacity 0.4
+
+.send__confirmation span
+	color $white - 40%
+	font-weight 700
+	
+.checkbox--default input[type="checkbox"]:checked + .checkbox--span
+	color $secondary__Color--available

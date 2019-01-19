@@ -1,0 +1,250 @@
+// Sender 
+
+section.shade
+	background-color $white
+	margin 0.2em 0
+	padding 2em 
+
+.shade__source
+	flex-direction row
+	align-items center
+	justify-content space-between
+	width 100%
+	padding-bottom 3em
+	margin-bottom 2em
+	border-bottom 2px solid $secondary__Color
+	
+.shade__right
+	flex-direction row
+	align-items center
+
+.shade__source__balance
+	flex-direction column
+	color $secondary__Color--available
+	line-height 1.5em
+	font-size 1rem
+
+.shade__check
+	margin-left 1.5em
+	
+.shade__source__amount
+	font-size 1.5rem
+	font-weight 800
+	
+	&--decimal
+		font-size 80%
+		opacity 0.8
+		
+.shade__name
+	@extend .entry__name
+
+.shade__address
+	@extend .entry__address
+
+// Payee, second step
+
+.tgt
+	flex-wrap wrap
+	width 100%
+	margin-bottom 2em
+	padding-bottom 2em
+	border-bottom 2px solid $secondary__Color
+
+// The payee cards
+
+.tgt__entry
+	background-color $secondary__Color--available
+	color $white
+	padding 0.8em
+	margin-top 1.5em
+	line-height 1.7em
+	flex 1
+	flex-direction row
+	align-items center
+	border-radius 3px
+	
+	&:first-child
+		margin-top 0
+
+	&:hover > a
+	&:hover > .tgt__details
+		opacity 1
+		
+		
+	a
+		opacity 0
+		padding 0.3em
+		margin-right 0.25em
+		line-height normal
+		transition()
+
+		.icon--outline
+			stroke $white - rgba(0,0,0,0.5)
+			transition()
+
+		&:hover
+			
+			.icon--outline
+				stroke $white
+		
+	.icon--outline
+		stroke $white
+		stroke-width 3
+		vertical-align middle
+		
+	input[type="text"]
+		padding-left 0.8em
+		margin 0
+		background-color transparent
+		border 0
+		font-size 0.875rem
+		font-weight 700
+		text-align right
+		color $white
+		
+		&::-webkit-input-placeholder
+			color $white
+
+.tgt__entry__amount
+	background-color #87cefa 
+	color $white
+	padding 0.8em
+	margin-top 1.5em
+	line-height 1.7em
+	flex 1
+	flex-direction row
+	align-items center
+	border-radius 3px
+	
+	&:first-child
+		margin-top 0
+
+	&:hover > a
+	&:hover > .tgt__details
+		opacity 1
+		
+		
+	a
+		opacity 0
+		padding 0.3em
+		margin-right 0.25em
+		line-height normal
+		transition()
+
+		.icon--outline
+			stroke $white - rgba(0,0,0,0.5)
+			transition()
+
+		&:hover
+			
+			.icon--outline
+				stroke $white
+		
+	.icon--outline
+		stroke $white
+		stroke-width 3
+		vertical-align middle
+		
+	input[type="text"]
+		padding-left 0.8em
+		margin 0
+		background-color transparent
+		border 0
+		font-size 0.875rem
+		font-weight 700
+		text-align right
+		color $white
+		
+		&::-webkit-input-placeholder
+			color $white
+
+.tgt__entry_error
+	background-color $red
+
+// Empty state for the payee card
+
+.tgt__entry--empty
+	@extend .tgt__entry
+	
+	font-size 1.0rem
+	input[type="text"]
+		text-align left
+		
+		&::-webkit-input-placeholder
+			font-weight 300
+			color $white - rgba(0,0,0,0.5)
+
+.tgt__details
+	flex 1
+	font-size 1.0em
+	
+.tgt__name
+	font-weight 700
+	font-size 1.0em
+
+.tgt__address
+	color $white - rgba(0,0,0,0.3)
+
+.shade__amount
+	flex-direction row
+	align-items right
+	transition()
+	margin-left 42em
+	
+	&:after
+		content "IOC"
+		font-size 1.0rem
+		font-weight 700
+		color $white - rgba(0,0,0,0.5)
+		
+// Send and confirmation input
+
+.shade__dialogue
+	width 100%
+	padding 1em
+	background-color $secondary__Color
+	border-radius 3px
+
+.shade__row
+	flex-direction row
+	justify-content space-between
+	align-items center
+	padding 1em 0
+	
+	&:first-child
+		padding-bottom 0.5em
+		padding-top 0
+	
+	&:nth-child(2)
+		padding-top 0.5em
+		padding-bottom 1.5em
+		margin-bottom 0.5em
+		border-bottom 1px solid $white - 10%
+		
+		span
+			font-size 1.2rem
+			font-weight 700
+		
+	&:last-child
+		border-bottom 0
+		padding-bottom 0
+		
+.shade__fee--details span
+	color $gray
+
+.shade__fee--amount span
+	color $red
+	font-weight 700
+	font-size 1.2rem
+
+	&:after
+		content "IOC"
+		margin-left 0.4em
+		opacity 0.4
+
+.shade__confirmation span
+	color $white - 40%
+	font-weight 700
+	
+.checkbox--default input[type="checkbox"]:checked + .checkbox--span
+	color $secondary__Color--available

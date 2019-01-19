@@ -1,0 +1,66 @@
+icon__Size--24()
+	width 24px
+	height @width
+
+icon__Size--20()
+	width 20px
+	height @width
+	
+icon__Size--18()
+	width 18px
+	height @width
+
+icon__Size--16()
+	width 16px
+	height @width
+
+icon__Size--13()
+	width 13px
+	height @width
+
+.icon
+	icon__Size--18()
+
+ // SVG Icons
+.icon--outline
+	stroke $white - 30%
+	stroke-width 2
+	fill none
+
+.icon--glyph
+	fill $white - 30%
+	
+.icon-check 
+	stroke $secondary__Color--available
+
+.icon-pending
+	stroke $secondary__Color--pending
+	
+.history__row--received
+	.icon--glyph
+		fill $secondary__Color--available
+	
+	.icon-receive
+		transform rotate(90deg)
+
+.history__row--sent
+	.icon--glyph
+		fill $main__Color--accent
+
+.history__row--header
+	.sort
+		.icon
+			icon__Size--13()
+
+.send__dest
+	.icon--outline
+		icon__Size--18()
+
+.send__right
+	.icon--glyph
+		fill $secondary__Color--available
+		icon__Size--20()
+
+.search__results 
+	.icon--outline
+		icon__Size--24()

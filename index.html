@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>I/O Coin Wallet</title>
+    <link rel="stylesheet" type="text/css" href="views/css/style.css">
+</head>
+<body>
+    <script>
+        // This <script> will immediately be nuked when the app is mounted.
+        (function () {
+            var m = require('mithril');
+            var App = require('./src/views/App');
+            var C = { 
+              controller: function() {
+                return { greeting: 'hello'}
+              },
+              view: function(ctrl) {
+                return m("input", ctrl.greeting)
+              }
+            }
+
+            m.mount(document.body, App);
+        })();
+
+      
+    </script>
+</body>
+</html>

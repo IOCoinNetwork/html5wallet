@@ -1,0 +1,45 @@
+html
+    -webkit-user-select none
+    cursor default
+
+a
+    text-decoration none
+    color black
+    
+    
+body
+    background-color $secondary__Color
+    font $font
+    -webkit-font-smoothing antialiased
+    overflow-y hidden
+        
+main
+    margin-left calc(16rem + 8px)
+    margin-top 64px
+    width calc(100% - 268px)
+    height calc(100vh - 64px)
+    overflow-y auto
+    animation tab-fade 0.5s ease-in-out
+    will-change animation
+
+section
+    flex-direction row
+    flex-wrap wrap
+    padding 1em 
+    &.column
+        flex-wrap wrap
+        flex-grow 1
+        flex-direction column
+        flex-basis 0
+        
+        &:first-child
+            margin-bottom 0
+
+@-webkit-keyframes tab-fade
+    0%
+        opacity 0
+        transform translateX(3%)
+    50%
+        transform translateX(0)
+    100%
+        opacity 1
